@@ -20,7 +20,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl
 import grails.plugin.mail.*
 
 class MailGrailsPlugin {
-    def version = "1.0-SNAPSHOT"
+    def version = "1.0-SNAP-ITDS-0.1"
     def grailsVersion = "1.3 > *"
 
     def author = "Grails Plugin Collective"
@@ -148,12 +148,12 @@ sendMail {
         def mailServiceClassName = applicationContext.mailService.class.name
         
         //adding sendMail to all services, besides the mailService of the plugin
-        for (serviceClass in application.serviceClasses) {
+        /* for (serviceClass in application.serviceClasses) {
             if (serviceClass.clazz.name != mailServiceClassName) {
                 serviceClass.metaClass.sendMail = { Closure dsl ->
                     applicationContext.mailService.sendMail(dsl)
                 }
             }
-        }
+        } */
     }
 }
